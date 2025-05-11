@@ -1,0 +1,11 @@
+﻿# Python bytecode
+__pycache__/
+*.py[cod]
+# Virtual environments
+venv/
+.env/
+# Secrets
+utils/Keys.py
+# IDE files
+.idea/
+.vscode/

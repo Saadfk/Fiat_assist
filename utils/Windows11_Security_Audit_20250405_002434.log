@@ -1,0 +1,20 @@
+Windows 11 Security Audit Report - 2025-04-05 00:24:39
+[BitLocker]: Not Enabled or not fully encrypted!
+[Firewall]: Domain firewall: Enabled
+[Firewall]: Private firewall: **Disabled**
+[Firewall]: Public firewall: **Disabled**
+[DNS]: Servers = 100.120.184.1, 103.86.96.100 (Check if these are approved)
+[Account Policies]: Minimum password age (days):                          0
+[Account Policies]: Maximum password age (days):                          42
+[Account Policies]: Minimum password length:                              0
+[Account Policies]: Lockout threshold:                                    5
+[Account Policies]: Lockout duration (minutes):                           30
+[Account Policies]: Lockout observation window (minutes):                 15
+[USB Boot]: No OS policy for external boot (Check BIOS settings)
+[NTLM/LM]: LmCompatibilityLevel = 5 (NTLMv2 only, LM/NTLMv1 refused)
+[NTLM/LM]: NoLMHash = 1 (LM hashes not stored)
+[WinRE]: Windows RE status:         Disabled
+[WinRE]: WinRE is disabled (Recovery options are turned off)
+[Secure Boot]: Secure Boot is NOT enabled
+[Network Services]: Remote Desktop: Disabled (connections denied)
+[Network Services]: Remote Registry: Disabled

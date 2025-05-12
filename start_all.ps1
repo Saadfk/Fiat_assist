@@ -3,7 +3,7 @@
 # always from the project root so `import utils` works
 
 # Path to your project root
-$ProjectRoot = "C:\Users\User\PycharmProjects\AI_FIAT"
+$ProjectRoot = "C:\Users\User\PycharmProjects\Fiat_assist"
 
 # Path to your venv python within that root
 $Python = Join-Path $ProjectRoot "venv\Scripts\python.exe"

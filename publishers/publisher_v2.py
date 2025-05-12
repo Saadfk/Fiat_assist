@@ -126,7 +126,7 @@ def post_to_discord(channel_id, message=None, embed=None):
 
 def main():
     # Set the watch directory to the monitors folder
-    watch_dir = r"C:\Users\User\PycharmProjects\Fiat_assist"
+    watch_dir = r"C:\Users\User\PycharmProjects\Fiat_assist\monitors"
     event_handler = MultiCSVHandler(CSV_FILES_TO_WATCH, watch_dir)
 
     observer = Observer()

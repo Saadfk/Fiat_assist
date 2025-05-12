@@ -1,0 +1,108 @@
+@@
+- # ── 3) Main loop: record only when page media is playing ───────────────
+- print("▶️ Monitoring for playback... Ctrl-C to stop")
+- try:
+-     while True:
+-         # wait for play
+-         while not is_playing():
+-             time.sleep(POLL_INTERVAL)
+-
+-         print("🔴 Playback detected—recording")
+-         frames = []
+-         start = time.time()
+-
+-         while is_playing():
+-             frames.append(stream.read(CHUNK, exception_on_overflow=False))
+-
+-         duration = time.time() - start
+-         ...
++ # ── 3) Main loop: record when audio level spikes ───────────────
++ print("▶️ Monitoring audio‐level… Ctrl-C to stop")
++ import numpy as np
++
++ # VAD parameters
++ SILENCE_THRESH = 500      # adjust this RMS threshold to your system
++ SILENCE_DEBOUNCE = 0.5    # seconds of “below threshold” to close recording
++
++ try:
++     silent_start = None
++     recording = False
++     frames = []
++     start_ts = None
++
++     while True:
++         data = stream.read(CHUNK, exception_on_overflow=False)
++         # compute RMS
++         pcm = np.frombuffer(data, dtype=np.int16)
++         rms = int(np.sqrt(np.mean(pcm.astype(np.float32)**2)))
++         print(f"[DEBUG] chunk RMS={rms}")
++
++         if not recording:
++             if rms >= SILENCE_THRESH:
++                 # sound just started
++                 recording = True
++                 frames = [data]
++                 start_ts = time.time()
++                 silent_start = None
++                 print("🔴 Audio above threshold—start recording")
++             # else stay idle
++         else:
++             frames.append(data)
++             if rms < SILENCE_THRESH:
++                 # potential end of speech
++                 if silent_start is None:
++                     silent_start = time.time()
++                     print("[DEBUG] silence detected—starting debounce")
++                 elif time.time() - silent_start >= SILENCE_DEBOUNCE:
++                     # end recording
++                     duration = time.time() - start_ts
++                     print(f"🟢 Silence held {SILENCE_DEBOUNCE}s—stop recording ({duration:.2f}s)")
++
++                     # save, transcribe, post exactly as before:
++                     tmp = os.path.join(tempfile.gettempdir(), f"nwk_{int(start_ts)}.wav")
++                     with wave.open(tmp,'wb') as wf:
++                         wf.setnchannels(CHANNELS)
++                         wf.setsampwidth(pa.get_sample_size(pyaudio.paInt16))
++                         wf.setframerate(SAMPLE_RATE)
++                         wf.writeframes(b''.join(frames))
++                     print(f"[DEBUG] Saved WAV → {tmp}")
++
++                     # ── Transcribe ──
++                     try:
++                         with open(tmp,"rb") as f:
++                             resp = OPENAI_CLIENT.audio.transcriptions.create(
++                                 model="whisper-1", file=f
++                             )
++                         text = resp.text.strip()
++                         print("   ↳", text)
++                     except Exception as e:
++                         print("⚠️ Transcription error:", e)
++                         text = None
++
++                     # ── Log & post ──
++                     if text:
++                         ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
++                         os.makedirs(os.path.dirname(CSV_PATH), exist_ok=True)
++                         with open(CSV_PATH,"a",encoding="utf-8") as csvf:
++                             csvf.write(f"{ts},{text}\n")
++                         post_to_discord(text)
++
++                     try: os.remove(tmp)
++                     except: pass
++
++                     # reset
++                     recording = False
++                     silent_start = None
++         # small sleep so we don’t hammer the loop
++         time.sleep(POLL_INTERVAL)
++
++ except KeyboardInterrupt:
++     print("\n🛑 User stopped")
++
++ finally:
++     print("[DEBUG] Cleaning up…")
++     stream.stop_stream()
++     stream.close()
++     pa.terminate()
++     ws.close()
++     print("💤 Exiting")

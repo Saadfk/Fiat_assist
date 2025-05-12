@@ -9,7 +9,7 @@ A streamlined Discord trading bot that:
 External project modules required
 --------------------------------
 - `publishers.publisher.post_to_twitter`
-- `risk.riskmgr.get_open_positions_weight`
+- `RISKCODE.riskmgr.get_open_positions_weight`
 - `utils.Keys` (expects `DISCORD_BOT_TOKEN`)
 - `utils.myfxbook` helpers
 
@@ -33,7 +33,7 @@ import pytz
 from publishers.publisher import post_to_twitter
 from utils import Keys
 from utils.myfxbook import get_trading_periods_table, get_gain_by_flag
-from risk.riskmgr import get_open_positions_weight
+from RISKCODE.riskmgr import get_open_positions_weight
 
 # ---------------------------------------------------------------------------
 # Configuration

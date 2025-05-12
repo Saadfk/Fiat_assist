@@ -1,12 +1,38 @@
 import os
 import re
+import requests
 from utils import Keys
 from openai import OpenAI
 from PyPDF2 import PdfReader
 
+# Configuration flags
+ENABLE_DISCORD = True  # Set to False to disable Discord integration entirely
+PROMPT_BEFORE_SEND = False  # Set to False to auto-send without prompting after summary
+DISCORD_CHANNEL_ID = "1176530579433455688"
+DISCORD_API_URL = f"https://discord.com/api/v9/channels/{DISCORD_CHANNEL_ID}/messages"
+
+# OpenAI client setup
 api_key = os.environ.get("OPENAI_API_KEY", Keys.OPENAI_API)
 client = OpenAI(api_key=api_key)
+
+# Directory to monitor for PDFs
 MONITOR_DIR = r"C:\Users\User\Dropbox\Current\2025"
+
+
+def send_to_discord(title: str, summary: str) -> None:
+    """
+    Send the given summary to Discord using a bot. Title will be formatted as a markdown heading.
+    """
+    token = Keys.DISCORD_BOT_TOKEN
+    headers = {
+        "Authorization": f"Bot {token}",
+        "Content-Type": "application/json"
+    }
+    content = f"# {title}\n{summary}"
+    payload = {"content": content}
+    response = requests.post(DISCORD_API_URL, json=payload, headers=headers)
+    if not response.ok:
+        print(f"Failed to send to Discord: {response.status_code} {response.text}")
 
 
 def list_recent_files(directory, count=20):
@@ -18,9 +44,8 @@ def list_recent_files(directory, count=20):
     recent_files = all_files[:count]
     print("\nRecent files:")
     for idx, file_path in enumerate(recent_files):
-        # Display only the file name without path and extension
-        file_name = os.path.splitext(os.path.basename(file_path))[0]
-        print(f"  {idx}: {file_name}")
+        name = os.path.splitext(os.path.basename(file_path))[0]
+        print(f"  {idx}: {name}")
     return recent_files
 
 
@@ -38,18 +63,22 @@ def extract_text_from_pdf(file_path):
 
 
 def process_file(selected_file):
-    # Get the file name without extension for presentation purposes
     file_name = os.path.splitext(os.path.basename(selected_file))[0]
     print(f"\nExtracting text from: {file_name}")
     text_content = extract_text_from_pdf(selected_file)
     if not text_content.strip():
         print("No extractable text found.")
         return
-    prompt_message = "Summarize in bullet points very succinctly, focusing on direct opinions:\n" + text_content
+
+    prompt_message = (
+        "Summarize in bullet points very succinctly, focusing on direct opinions:\n"
+        + text_content
+    )
     messages = [
         {"role": "system", "content": "You are a hedge fund analyst"},
         {"role": "user", "content": prompt_message}
     ]
+
     print("Sending to OpenAI API for summarization...")
     try:
         completion = client.chat.completions.create(model="o3-mini", messages=messages)
@@ -57,121 +86,104 @@ def process_file(selected_file):
     except Exception as e:
         print(f"API request failed: {e}")
         return
+
+    # Display summary on console
     print(f"\n### {file_name} ###")
     print(summary)
     print("\n" + "#" * 50 + "\n")
 
+    # Handle Discord sending
+    if ENABLE_DISCORD:
+        send_it = True
+        if PROMPT_BEFORE_SEND:
+            while True:
+                confirm = input(f"Send summary of '{file_name}' to Discord? (y/n): ").strip().lower()
+                if confirm in ('y', 'n'):
+                    send_it = (confirm == 'y')
+                    break
+                print("Please enter 'y' or 'n'.")
+        if send_it:
+            print(f"Sending to Discord channel {DISCORD_CHANNEL_ID}...")
+            send_to_discord(file_name, summary)
+            print("Sent.")
+
 
 def search_files(keyword, files):
-    """Return a list of tuples (original_index, file_path) for files whose names contain the keyword."""
-    matching_files = []
-    for idx, file_path in enumerate(files):
-        file_name = os.path.splitext(os.path.basename(file_path))[0]
-        if keyword.lower() in file_name.lower():
-            matching_files.append((idx, file_path))
-    return matching_files
+    matches = []
+    for idx, path in enumerate(files):
+        name = os.path.splitext(os.path.basename(path))[0]
+        if keyword.lower() in name.lower():
+            matches.append((idx, path))
+    return matches
 
 
 def main():
     print(f"Monitoring directory: {MONITOR_DIR}")
     print("Commands:")
     print("  'r'               - List recent files")
-    print("  <ID> or comma-separated IDs (e.g., 1 or 1,2,4) - Summarize file(s)")
-    print("  s \"keyword\"      - Search recent files for 'keyword' and print an ordered list")
-    print("  l <number>        - Show the local path of the file at the given index in the ordered list")
+    print("  <ID> or IDs      - Summarize file(s), e.g. '1' or '1,2,4'")
+    print("  s \"keyword\"      - Search files by keyword")
+    print("  l <number>        - Show full path of entry in last search")
     print("  'q'               - Quit")
 
     recent_files = []
-    # current_ordered_list holds the ordered results from the last search
-    current_ordered_list = []
+    current_ordered = []
 
     while True:
-        command = input("\nEnter command: ").strip()
-        if command.lower() == 'q':
+        cmd = input("\nEnter command: ").strip()
+        if cmd.lower() == 'q':
             print("Exiting.")
             break
-        elif command.lower() == 'r':
-            try:
-                recent_files = list_recent_files(MONITOR_DIR, count=40)
-                # Clear any previous ordered list when listing all files
-                current_ordered_list = []
-                if not recent_files:
-                    print("No files found.")
-            except Exception as e:
-                print(f"Error: {e}")
-        elif command.lower().startswith('s '):
-            # Expecting the format: s "keyword"
-            match = re.match(r'^s\s+"(.+)"$', command)
+        elif cmd.lower() == 'r':
+            recent_files = list_recent_files(MONITOR_DIR, count=40)
+            current_ordered = []
+        elif cmd.lower().startswith('s '):
+            match = re.match(r'^s\s+\"(.+?)\"$', cmd)
             if match:
                 keyword = match.group(1)
-                # Ensure we have the recent file list loaded
                 if not recent_files:
-                    try:
-                        recent_files = list_recent_files(MONITOR_DIR, count=40)
-                    except Exception as e:
-                        print(f"Error: {e}")
-                        continue
-                results = search_files(keyword, recent_files)
-                if results:
-                    # Create a new ordered list with re-indexing starting at 0
-                    current_ordered_list = [file_path for _, file_path in results]
-                    print(f"Ordered list for keyword '{keyword}':")
-                    for new_idx, file_path in enumerate(current_ordered_list):
-                        file_name = os.path.splitext(os.path.basename(file_path))[0]
-                        print(f"  {new_idx}: {file_name}")
+                    recent_files = list_recent_files(MONITOR_DIR, count=40)
+                res = search_files(keyword, recent_files)
+                if res:
+                    current_ordered = [path for _, path in res]
+                    print(f"Ordered list for '{keyword}':")
+                    for i, path in enumerate(current_ordered):
+                        print(f"  {i}: {os.path.splitext(os.path.basename(path))[0]}")
                 else:
-                    print(f"No files found matching '{keyword}'.")
-                    current_ordered_list = []
+                    print(f"No files matching '{keyword}'.")
+                    current_ordered = []
             else:
-                print("Invalid search format. Please use: s \"keyword\"")
-        elif command.lower().startswith('l '):
-            # Expecting the format: l <number>
-            match = re.match(r'^l\s+(\d+)$', command)
+                print("Invalid search. Use: s \"keyword\"")
+        elif cmd.lower().startswith('l '):
+            match = re.match(r'^l\s+(\d+)$', cmd)
             if match:
-                file_index = int(match.group(1))
-                # Prefer the current ordered list if available
-                if current_ordered_list:
-                    if 0 <= file_index < len(current_ordered_list):
-                        selected_path = current_ordered_list[file_index]
-                        print(f"Local path: {selected_path}")
-                    else:
-                        print("Invalid file index for the current ordered list.")
-                elif recent_files:
-                    # Fallback: use the recent files list if no ordered list exists
-                    if 0 <= file_index < len(recent_files):
-                        selected_path = recent_files[file_index]
-                        print(f"Local path: {selected_path}")
-                    else:
-                        print("Invalid file index in recent files.")
+                idx = int(match.group(1))
+                source = current_ordered or recent_files
+                if 0 <= idx < len(source):
+                    print(f"Local path: {source[idx]}")
                 else:
-                    print("No list available. Please perform a search or refresh the file list first.")
+                    print("Invalid index.")
             else:
                 print("Invalid format. Use: l <number>")
         else:
-            # Assume input is a comma-separated list of file IDs to process
             if not recent_files:
-                print("No files listed. Press 'r' to refresh.")
+                print("No files listed. Use 'r' to refresh.")
                 continue
-
-            indices = [s.strip() for s in command.split(',')]
-            for idx_str in indices:
+            ids = [s.strip() for s in cmd.split(',')]
+            for s in ids:
                 try:
-                    file_index = int(idx_str)
+                    i = int(s)
                 except ValueError:
-                    print(f"Invalid input: {idx_str}")
+                    print(f"Invalid ID: {s}")
                     continue
-                if file_index < 0 or file_index >= len(recent_files):
-                    print(f"Invalid file ID: {file_index}")
+                if i < 0 or i >= len(recent_files):
+                    print(f"ID out of range: {i}")
                     continue
-                selected_file = recent_files[file_index]
-                if not os.path.isfile(selected_file):
-                    print("File not found.")
+                path = recent_files[i]
+                if not path.lower().endswith('.pdf'):
+                    print("Unsupported file type.")
                     continue
-                # Check for valid file type (e.g., PDF)
-                if not selected_file.lower().endswith(".pdf"):
-                    print("Not a valid file. Please choose a supported file.")
-                    continue
-                process_file(selected_file)
+                process_file(path)
 
 
 if __name__ == "__main__":

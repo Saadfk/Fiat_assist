@@ -3,7 +3,7 @@
 
 """
 Monitor headlines from "Breaking News - The Fly" and log new items
-to headlines.csv with timestamp format YYYY-MM-DD HH:MM:SS,HeadlineText
+to headlines.csv with timestamp format YYYY-MM-DD HH:MM:SS,HeadlineText,Source
 """
 
 import os
@@ -79,7 +79,6 @@ def load_existing(csv_filename):
     return existing
 
 def main():
-    # write into headlines.csv in this script's directory
     csv_file = os.path.join(os.path.dirname(__file__), "headlines.csv")
 
     browser = pychrome.Browser(url="http://127.0.0.1:9222")
@@ -108,7 +107,8 @@ def main():
                             seen.add(headline)
                             ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                             print(f"[{ts}] New headline: {headline}")
-                            writer.writerow([ts, headline])
+                            # Add Source="FLY"
+                            writer.writerow([ts, headline, "FLY"])
 
                 time.sleep(1)
 

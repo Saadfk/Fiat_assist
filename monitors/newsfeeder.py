@@ -76,8 +76,11 @@ def post_to_discord(message):
         log_message(f"Discord post failed: {e}")
 
 def log_headline_csv(headline):
+    ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # append to the unified headlines.csv, with Source="RTRS"
     with open("headlines.csv", "a", newline="", encoding="utf-8") as f:
-        csv.writer(f).writerow([datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), headline])
+        writer = csv.writer(f)
+        writer.writerow([ts, headline, "RTRS"])
 
 def monitor_control(control, main_window):
     spinner = ['|', '/', '-', '\\']

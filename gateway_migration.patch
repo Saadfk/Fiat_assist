@@ -1,0 +1,59 @@
+diff --git a/monitors/newsquawk_recorder.py b/monitors/newsquawk_recorder.py
+--- a/monitors/newsquawk_recorder.py
++++ b/monitors/newsquawk_recorder.py
+@@
+-import discord
+-from utils import Keys
++from discord_gateway import send_message
+@@
+-        csvf.write(f"{ts},{text}\n")
+-        post_to_discord(text)
++        csvf.write(f"{ts},{text}\n")
++        send_message(855359994547011604, text)
+
+diff --git a/monitors/headlines_loader.py b/monitors/headlines_loader.py
+--- a/monitors/headlines_loader.py
++++ b/monitors/headlines_loader.py
+@@
+-from publishers.discord_publisher import send_to_discord
++from discord_gateway import send_message
+@@
+-            send_to_discord(855359994547011604, headline)
++            send_message(855359994547011604, headline)
+
+diff --git a/summarizer/summarize.py b/summarizer/summarize.py
+--- a/summarizer/summarize.py
++++ b/summarizer/summarize.py
+@@
+-import requests, sys, os
+-from utils import Keys
++import sys, os
++from discord_gateway import send_message
+@@
+-    requests.post(Keys.SUMMARY_WEBHOOK_URL, json={"content": summary})
++    send_message(855359994547011604, summary)
+
+diff --git a/risk_assessor/risk_assessor.py b/risk_assessor/risk_assessor.py
+--- a/risk_assessor/risk_assessor.py
++++ b/risk_assessor/risk_assessor.py
+@@
+-from publishers.discord_publisher import send_risk_update
++from discord_gateway import send_message
+@@
+-    send_risk_update(855359994547011604, report)
++    send_message(855359994547011604, report)
+
+diff --git a/start_all.ps1 b/start_all.ps1
+--- a/start_all.ps1
++++ b/start_all.ps1
+@@
+-# launch workers
++Start-Process python "discord_gateway.py"                          -WindowStyle Minimized
++# launch workers
+ Start-Process python "monitors\\newsquawk_recorder.py"             -WindowStyle Minimized
+ Start-Process python "monitors\\headlines_loader.py"               -WindowStyle Minimized
+ Start-Process python "summarizer\\summarize.py"                    -WindowStyle Minimized
+ Start-Process python "risk_assessor\\risk_assessor.py"             -WindowStyle Minimized
+
+diff --git a/publishers/discord_publisher.py b/publishers/discord_publisher.py
+deleted file mode 100644

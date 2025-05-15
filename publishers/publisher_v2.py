@@ -137,21 +137,21 @@ def main():
     observer.start()
     print("Watching:", os.path.join(monitors_dir, CSV_FILE))
 
-    try:
-        while True:
-            time.sleep(1)
-            if aggregator.should_flush():
-                combined = aggregator.flush()
-                if len(combined) > 280:
-                    combined = combined[:280] + "..."
-                if twitter_usage.can_post():
-                    twitter_usage.record_post()
-                    ts = datetime.datetime.now().strftime("%H:%M")
-                    post_to_twitter(f"[{ts}]\n{combined}")
-                else:
-                    print("SKIPPED TWEET (limit reached).")
-    except KeyboardInterrupt:
-        observer.stop()
+    # try:
+    #     while True:
+    #         time.sleep(1)
+    #         if aggregator.should_flush():
+    #             combined = aggregator.flush()
+    #             if len(combined) > 280:
+    #                 combined = combined[:280] + "..."
+    #             if twitter_usage.can_post():
+    #                 twitter_usage.record_post()
+    #                 ts = datetime.datetime.now().strftime("%H:%M")
+    #                 post_to_twitter(f"[{ts}]\n{combined}")
+    #             else:
+    #                 print("SKIPPED TWEET (limit reached).")
+    # except KeyboardInterrupt:
+    #     observer.stop()
     observer.join()
 
 

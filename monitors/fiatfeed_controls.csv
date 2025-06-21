@@ -1,0 +1,338 @@
+idx,control_type,name,automation_id,class_name,rect,depth
+0,Document,FIATFEED,59131328,Chrome_RenderWidgetHostHWND,"(L1591, T65, R2545, B825)",2
+1,Text,,,,"(L0, T0, R0, B0)",3
+2,Text,,,,"(L0, T0, R0, B0)",3
+3,Text,,,,"(L0, T0, R0, B0)",3
+4,Text,,,,"(L0, T0, R0, B0)",3
+5,Text,,,,"(L0, T0, R0, B0)",3
+6,Text,NEWS2.0,,,"(L0, T0, R0, B0)",3
+7,Text,"AA AND (OIL OR Macro & FX: All) AND LEN NOT (""INDONESIA"" OR ""BRAZIL"" OR ""POLL"" OR KE)",,,"(L0, T0, R0, B0)",3
+8,Text,,,,"(L0, T0, R0, B0)",3
+9,Text,FIATFEED,,,"(L0, T0, R0, B0)",3
+10,Text,,,,"(L0, T0, R0, B0)",3
+11,Text,,,,"(L0, T0, R0, B0)",3
+12,Text,,,,"(L0, T0, R0, B0)",3
+13,Text,,,,"(L0, T0, R0, B0)",3
+14,Text,,,,"(L0, T0, R0, B0)",3
+15,Text,,,,"(L0, T0, R0, B0)",3
+16,Text,,,,"(L0, T0, R0, B0)",3
+17,Text,,,,"(L0, T0, R0, B0)",3
+18,Pane,,contentframe,,"(L1593, T71, R2543, B823)",3
+19,Document,,,,"(L1593, T71, R2543, B823)",4
+20,Pane,,AppFrame,,"(L1593, T71, R2543, B823)",5
+21,Document,NEWS2.0,,,"(L1593, T71, R2543, B823)",6
+22,Button,,nm-query-builder-button,,"(L1597, T78, R1621, B102)",7
+23,Image,,rightpanel-open,,"(L1601, T82, R1617, B98)",8
+24,Button,,,,"(L1625, T78, R1673, B102)",7
+25,Image,,save,,"(L1633, T82, R1650, B98)",8
+26,Image,,down,,"(L1652, T83, R1665, B96)",8
+27,Button,,,,"(L1677, T78, R1701, B102)",7
+28,Image,,edit,,"(L1681, T82, R1697, B98)",8
+29,Button,,,,"(L1705, T78, R1753, B102)",7
+30,Image,,set-alert,,"(L1713, T82, R1730, B98)",8
+31,Image,,down,,"(L1732, T83, R1745, B96)",8
+32,Group,,,,"(L1757, T78, R2483, B116)",7
+33,Button,,,,"(L1762, T81, R1780, B99)",8
+34,Image,,,,"(L1762, T81, R1780, B99)",9
+35,Text,All Alerts,,,"(L1800, T75, R1847, B89)",8
+36,Button,,,,"(L1848, T75, R1863, B89)",8
+37,Image,,,,"(L1848, T75, R1863, B89)",9
+38,Image,,,,"(L1917, T74, R1936, B92)",8
+39,Button,,,,"(L2074, T75, R2089, B89)",8
+40,Image,,,,"(L2074, T75, R2089, B89)",9
+41,Image,,,,"(L2135, T74, R2154, B92)",8
+42,Text,Macro & FX: All,,,"(L2169, T75, R2250, B89)",8
+43,Button,,,,"(L2251, T75, R2266, B89)",8
+44,Image,,,,"(L2251, T75, R2266, B89)",9
+45,Text,),,,"(L2284, T74, R2288, B89)",8
+46,Image,,,,"(L2346, T74, R2365, B92)",8
+47,Text,English,,,"(L2380, T75, R2419, B89)",8
+48,Button,,,,"(L2420, T75, R2435, B89)",8
+49,Image,,,,"(L2420, T75, R2435, B89)",9
+50,Text,NOT,,,"(L1799, T96, R1824, B111)",8
+51,Image,,,,"(L1834, T96, R1853, B114)",8
+52,Button,,,,"(L1958, T97, R1973, B111)",8
+53,Image,,,,"(L1958, T97, R1973, B111)",9
+54,Text,OR,,,"(L1991, T96, R2008, B111)",8
+55,Image,,,,"(L2018, T96, R2037, B114)",8
+56,Button,,,,"(L2093, T97, R2108, B111)",8
+57,Image,,,,"(L2093, T97, R2108, B111)",9
+58,Image,,,,"(L2154, T96, R2172, B114)",8
+59,Text,POLL,,,"(L2188, T97, R2217, B111)",8
+60,Button,,,,"(L2218, T97, R2233, B111)",8
+61,Image,,,,"(L2218, T97, R2233, B111)",9
+62,Text,OR,,,"(L2251, T96, R2268, B111)",8
+63,Image,,,,"(L2278, T96, R2297, B114)",8
+64,Text,Kenya,,,"(L2312, T97, R2346, B111)",8
+65,Button,,,,"(L2347, T97, R2362, B111)",8
+66,Image,,,,"(L2347, T97, R2362, B111)",9
+67,Text,),,,"(L2380, T96, R2384, B111)",8
+68,Edit,"Search by RIC, topic, portfolio...",,,"(L1788, T79, R1978, B101)",8
+69,Button,,clear-btn,,"(L2452, T79, R2468, B117)",8
+70,Image,,cross,,"(L2452, T90, R2468, B106)",9
+71,Button,,nm-filters-button,,"(L2487, T78, R2511, B102)",7
+72,Image,,filter,,"(L2491, T82, R2507, B98)",8
+73,Button,,nm-settings-button,,"(L2515, T78, R2539, B102)",7
+74,Image,,settings,,"(L2519, T82, R2535, B98)",8
+75,Button,Only Important,,,"(L1597, T131, R1709, B155)",7
+76,Image,,down,,"(L1686, T135, R1703, B151)",8
+77,Group,Only Important,,,"(L1603, T131, R1683, B155)",8
+78,Text,Only Important,,,"(L1604, T136, R1682, B150)",9
+79,Button,All Time,,,"(L1712, T131, R1796, B155)",7
+80,Image,,calendar,,"(L1770, T135, R1787, B151)",8
+81,Group,News Feeds; Breaking News Alerts; Web News; X Posts 4,,,"(L1799, T131, R1952, B155)",7
+82,ComboBox,Content Type,,,"(L1800, T131, R1908, B155)",8
+83,Group,,,,"(L1909, T135, R1924, B151)",8
+84,Text,4,,,"(L1913, T137, R1920, B148)",9
+85,Image,,down,,"(L1930, T135, R1947, B151)",8
+86,Button,,,,"(L1955, T131, R1980, B155)",7
+87,Image,,highlight,,"(L1959, T135, R1976, B151)",8
+88,Button,,,,"(L1983, T131, R2008, B155)",7
+89,Image,,open-playlist,,"(L1987, T135, R2004, B151)",8
+90,Image,,live-content,,"(L2519, T135, R2535, B151)",7
+91,Group,,nsw-container,,"(L1593, T163, R2543, B823)",7
+92,Text,02:46:06,,,"(L1602, T184, R1650, B200)",8
+93,Image,,,,"(L1673, T184, R1688, B199)",8
+94,Text,EXPLOSION HEARD IN IRAN'S ISFAHAN - IRANIAN MEDIA,,,"(L1691, T183, R2049, B200)",8
+95,Text,02:36:34,,,"(L1602, T225, R1650, B241)",8
+96,Image,,,,"(L1673, T225, R1688, B240)",8
+97,Text,SOUTH KOREA TRADE ENVOY TO VISIT U.S. JUNE 22-27 - TRADE MINISTRY,,,"(L1691, T224, R2164, B241)",8
+98,Text,01:35:37,,,"(L1602, T250, R1650, B266)",8
+99,Image,,,,"(L1673, T250, R1688, B265)",8
+100,Text,"FAA: RESULTING IN A LOSS OF RADAR, FREQUENCIES, AND AUTOMATION EQUIPMENT",,,"(L1691, T249, R2241, B266)",8
+101,Text,01:35:20,,,"(L1602, T275, R1650, B291)",8
+102,Image,,,,"(L1673, T275, R1688, B290)",8
+103,Text,FAA: JACKSONVILLE AIR ROUTE TRAFFIC CONTROL CENTER EXPERIENCING A TELECOMMUNICATIONS ISSUE THAT BEGAN EARLIER TODAY,,,"(L1672, T274, R2484, B307)",8
+104,Text,01:14:47,,,"(L1602, T299, R1650, B315)",8
+105,Image,,,,"(L1673, T299, R1688, B314)",8
+106,Text,ISRAELI MILITARY SAYS A NEW WAVE OF ATTACKS AGAINST MISSILE STORAGE AND LAUNCH INFRASTRUCTURE IN IRAN HAS BEGUN,,,"(L1672, T298, R2493, B331)",8
+107,Text,00:57:17,,,"(L1602, T324, R1650, B340)",8
+108,Image,,,,"(L1673, T324, R1688, B339)",8
+109,Text,"MARATHON ASSESSING DAMAGE AT GALVESTON BAY REFINERY IN TEXAS FROM JUNE 14 FIRE, SOURCES SAY",,,"(L1691, T323, R2393, B340)",8
+110,Text,00:56:41,,,"(L1602, T349, R1650, B365)",8
+111,Image,,,,"(L1673, T349, R1688, B364)",8
+112,Text,"ISRAELI MILITARY INSTRUCTS RESIDENTS THEY ARE NOW PERMITTED TO LEAVE PROTECTED AREAS, SIGNALING THREAT FROM LATEST IRANIAN ATTACK IS OVER",,,"(L1672, T348, R2513, B381)",8
+113,Text,00:42:14,,,"(L1602, T374, R1650, B390)",8
+114,Image,,,,"(L1673, T374, R1688, B389)",8
+115,Text,SEVERAL EXPLOSIONS HEARD OVER TEL AVIV - REUTERS WITNESS,,,"(L1691, T372, R2118, B389)",8
+116,Text,00:36:18,,,"(L1602, T398, R1650, B414)",8
+117,Image,,,,"(L1673, T398, R1688, B413)",8
+118,Text,ISRAELI MILITARY SAYS MISSILES LAUNCHED FROM IRAN TOWARDS ISRAEL,,,"(L1691, T397, R2170, B414)",8
+119,Text,00:14:59,,,"(L1602, T423, R1650, B439)",8
+120,Image,,,,"(L1673, T423, R1688, B438)",8
+121,Text,"U.S., EU NEAR DEAL ON NON-TARIFF TRADE IRRITANTS - WSJ",,,"(L1691, T422, R2079, B439)",8
+122,Text,20 June 2025,,,"(L1601, T445, R1685, B462)",8
+123,Text,23:25:12,,,"(L1602, T470, R1650, B486)",8
+124,Image,,,,"(L1673, T471, R1688, B486)",8
+125,Text,"U.S. JUDGE BLOCKS TRUMP ADMINISTRATION FROM SLASHING UNIVERSITIES' FUNDING FROM NATIONAL SCIENCE FOUNDATION, RULING SAYS",,,"(L1672, T469, R2436, B502)",8
+126,Group,,,,"(L2498, T469, R2526, B486)",8
+127,Text,RPT,,,"(L2502, T471, R2522, B484)",9
+128,Text,23:24:10,,,"(L1602, T495, R1650, B511)",8
+129,Image,,,,"(L1673, T495, R1688, B510)",8
+130,Text,"U.S. JUDGE BLOCKS TRUMP ADMINISTRATION FROM SLASHING UNIVERSITIES' FUNDING FROM NATIONAL SCIENCE FOUNDATION, RULING SAYS",,,"(L1672, T494, R2517, B527)",8
+131,Text,22:59:11,,,"(L1602, T520, R1650, B536)",8
+132,Image,,,,"(L1673, T520, R1688, B535)",8
+133,Text,"TRUMP: MAYBE, I'LL HAVE TO CHANGE MY MIND ABOUT FIRING POWELL",,,"(L1691, T519, R2154, B536)",8
+134,Text,22:50:02,,,"(L1602, T545, R1650, B561)",8
+135,Image,,,,"(L1673, T545, R1688, B560)",8
+136,Text,DEPARTMENT OF LABOR SAYS IT IS SUSPENDING ENFORCEMENT OF THE BIDEN ADMINISTRATION’S 2024 (NOT 2924) FARMWORKER RULE,,,"(L1672, T544, R2448, B577)",8
+137,Group,,,,"(L2455, T543, R2526, B560)",8
+138,Text,CORRECTED,,,"(L2459, T545, R2522, B558)",9
+139,Text,22:22:20,,,"(L1602, T569, R1650, B585)",8
+140,Image,,,,"(L1673, T569, R1688, B584)",8
+141,Text,"NORWAY'S STYRKE LABOUR UNION: HAS AGREED WAGE DEAL FOR OIL DRILLING WORKERS, WILL NOT GO ON STRIKE",,,"(L1691, T568, R2441, B585)",8
+142,Text,22:19:15,,,"(L1602, T594, R1650, B610)",8
+143,Image,,,,"(L1673, T594, R1688, B609)",8
+144,Text,U.S. HIGHWAY SAFETY OFFICIALS SAY THEY ARE REVIEWING INFORMATION FROM TESLA ABOUT THE SELF-DRIVING ROBOTAXI,,,"(L1691, T593, R2503, B610)",8
+145,Text,21:51:09,,,"(L1602, T619, R1650, B635)",8
+146,Image,,,,"(L1673, T619, R1688, B634)",8
+147,Text,CANADIAN DOLLAR CAD= TOUCHES WEAKEST SINCE MAY 30 AT 1.3747 PER U.S. DOLLAR,,,"(L1691, T618, R2261, B635)",8
+148,Text,21:42:42,,,"(L1602, T644, R1650, B659)",8
+149,Image,,,,"(L1673, T644, R1688, B659)",8
+150,Text,TOP PENTAGON SPY PICK REJECTED BY WHITE HOUSE -POLITICO,,,"(L1691, T642, R2111, B659)",8
+151,Text,21:36:26,,,"(L1602, T668, R1650, B684)",8
+152,Image,,,,"(L1673, T668, R1688, B683)",8
+153,Text,ISRAELI MILITARY SAYS IT HAS COMPLETED ANOTHER WAVE OF STRIKES ON MISSILE LAUNCH SITES IN WESTERN IRAN IN RECENT HOURS,,,"(L1672, T667, R2522, B700)",8
+154,Text,21:11:47,,,"(L1602, T693, R1650, B709)",8
+155,Image,,,,"(L1673, T693, R1688, B708)",8
+156,Text,DALY: ADDITIONAL SOFTENING IN LABOR MARKET COULD EASILY TURN INTO WEAKENING; CAN'T LET THAT HAPPEN,,,"(L1691, T692, R2435, B709)",8
+157,Text,21:10:52,,,"(L1602, T718, R1650, B734)",8
+158,Image,,,,"(L1673, T718, R1688, B733)",8
+159,Text,DALY: BUT IT'S TOO EARLY TO CALL THAT NOW,,,"(L1691, T717, R1992, B734)",8
+160,Text,21:10:46,,,"(L1602, T742, R1650, B758)",8
+161,Image,,,,"(L1673, T742, R1688, B757)",8
+162,Text,DALY: THERE'S A LOT TO BE SAID FOR THE VIEW THAT TARIFFS WILL HAVE A ONE-TIME EFFECT ON INFLATION,,,"(L1691, T741, R2393, B758)",8
+163,Text,21:07:20,,,"(L1602, T767, R1650, B783)",8
+164,Image,,,,"(L1673, T767, R1688, B782)",8
+165,Text,"DALY: UNLESS SAW FALTERING LABOR MARKET, FALL LOOKS MORE APPROPRIATE FOR RATE CUT",,,"(L1691, T766, R2310, B783)",8
+166,Text,21:06:58,,,"(L1602, T792, R1650, B808)",8
+167,Image,,,,"(L1673, T792, R1688, B807)",8
+168,Text,"DALY: LOOK MORE TO THE FALL, RATHER THAN JULY, FOR POSSIBLE RATE CUT",,,"(L1691, T791, R2194, B808)",8
+169,Text,21:06:34,,,"(L1602, T817, R1650, B833)",8
+170,Image,,,,"(L1673, T817, R1688, B832)",8
+171,Text,DALY: CEOS HAVE CAUTIOUS OPTIMISM ON TARIFFS,,,"(L1691, T815, R2026, B832)",8
+172,Text,21:06:10,,,"(L0, T0, R0, B0)",8
+173,Image,,,,"(L0, T0, R0, B0)",8
+174,Text,DALY: ALSO POSSIBLE TARIFFS WON'T HAVE AS MUCH IMPACT ON INFLATION,,,"(L0, T0, R0, B0)",8
+175,Text,21:05:58,,,"(L0, T0, R0, B0)",8
+176,Image,,,,"(L0, T0, R0, B0)",8
+177,Text,DALY: POSSIBLE WE COULD GET A MEANINGFUL IMPACT ON INFLATION,,,"(L0, T0, R0, B0)",8
+178,Text,21:05:21,,,"(L0, T0, R0, B0)",8
+179,Image,,,,"(L0, T0, R0, B0)",8
+180,Text,DALY: FUNDAMENTALS OF ECONOMY ARE MOVING TO WHERE AN INTEREST RATE CUT MAY BE NECESSARY,,,"(L0, T0, R0, B0)",8
+181,Text,21:05:08,,,"(L0, T0, R0, B0)",8
+182,Image,,,,"(L0, T0, R0, B0)",8
+183,Text,DALY: MANY POSSIBILITIES ON HOW MUCH OF TARIFFS PASS THROUGH TO CONSUMERS,,,"(L0, T0, R0, B0)",8
+184,Text,21:04:46,,,"(L0, T0, R0, B0)",8
+185,Image,,,,"(L0, T0, R0, B0)",8
+186,Text,DALY: HAVE TO CONTINUE TO WATCH POLICIES GOING FORWARD,,,"(L0, T0, R0, B0)",8
+187,Text,21:04:33,,,"(L0, T0, R0, B0)",8
+188,Image,,,,"(L0, T0, R0, B0)",8
+189,Text,DALY: WITHOUT TARIFFS WOULD BE CONSIDERING RATE NORMALIZATION,,,"(L0, T0, R0, B0)",8
+190,Text,21:04:15,,,"(L0, T0, R0, B0)",8
+191,Image,,,,"(L0, T0, R0, B0)",8
+192,Text,DALY: GREAT NEWS THAT INFLATION HAS CONTINUED TO COME DOWN,,,"(L0, T0, R0, B0)",8
+193,Text,21:03:36,,,"(L0, T0, R0, B0)",8
+194,Image,,,,"(L0, T0, R0, B0)",8
+195,Text,DALY: CONCERNS ABOUT TARIFFS IMPACT ON INFLATION AREN'T AS LARGE AS THEY WERE WHEN THEY WERE FIRST ANNOUNCED,,,"(L0, T0, R0, B0)",8
+196,Text,21:02:57,,,"(L0, T0, R0, B0)",8
+197,Image,,,,"(L0, T0, R0, B0)",8
+198,Text,"FED'S DALY: SO FAR ECONOMY IN A GOOD PLACE, AS IS POLICY",,,"(L0, T0, R0, B0)",8
+199,Text,21:02:47,,,"(L0, T0, R0, B0)",8
+200,Image,,,,"(L0, T0, R0, B0)",8
+201,Text,FED'S DALY: THINGS ARE BALANCE -- CNBC INTERVIEW,,,"(L0, T0, R0, B0)",8
+202,Text,21:00:51,,,"(L0, T0, R0, B0)",8
+203,Image,,,,"(L0, T0, R0, B0)",8
+204,Text,"UNOFFICIALLY, FOR THE WEEK, THE S&P 500 FELL 0.15%, THE NASDAQ ROSE 0.21%, AND THE DOW CLIMBED 0.02%",,,"(L0, T0, R0, B0)",8
+205,Text,21:00:00,,,"(L0, T0, R0, B0)",8
+206,Image,,,,"(L0, T0, R0, B0)",8
+207,Text,"DOW JONES .DJI UNOFFICIALLY CLOSES UP 17.88 POINTS, OR 0.04%, AT 42,189.54",,,"(L0, T0, R0, B0)",8
+208,Text,21:00:00,,,"(L0, T0, R0, B0)",8
+209,Image,,,,"(L0, T0, R0, B0)",8
+210,Text,"NASDAQ .IXIC UNOFFICIALLY CLOSES DOWN 102.15 POINTS, OR 0.52 PERCENT, AT 19,444.12",,,"(L0, T0, R0, B0)",8
+211,Text,21:00:00,,,"(L0, T0, R0, B0)",8
+212,Image,,,,"(L0, T0, R0, B0)",8
+213,Text,"S&P 500 .SPX UNOFFICIALLY CLOSES DOWN 17.83 POINTS, OR 0.30 PERCENT, AT 5,963.04",,,"(L0, T0, R0, B0)",8
+214,Text,21:00:00,,,"(L0, T0, R0, B0)",8
+215,Image,,,,"(L0, T0, R0, B0)",8
+216,Text,"DOW JONES .DJI UNOFFICIALLY CLOSES UP 12.14 POINTS, OR 0.03 PERCENT, AT 42,183.80",,,"(L0, T0, R0, B0)",8
+217,Text,20:44:00,,,"(L0, T0, R0, B0)",8
+218,Image,,,,"(L0, T0, R0, B0)",8
+219,Text,TRUMP: LAST THING YOU WANT TO DO IS GROUND FORCES,,,"(L0, T0, R0, B0)",8
+220,Separator,,,,"(L0, T0, R0, B0)",8
+221,Text,NEWS FILTERS,,,"(L0, T0, R0, B0)",7
+222,Button,,,,"(L0, T0, R0, B0)",7
+223,Image,,leftpanel-closed,,"(L0, T0, R0, B0)",8
+224,Text,NEWS SETTINGS,,,"(L0, T0, R0, B0)",7
+225,Button,,,,"(L0, T0, R0, B0)",7
+226,Image,,leftpanel-closed,,"(L0, T0, R0, B0)",8
+227,Button,DISPLAY,header-label,,"(L0, T0, R0, B0)",7
+228,Group,DISPLAY,content,,"(L0, T0, R0, B0)",7
+229,RadioButton,Open in new window,,,"(L0, T0, R0, B0)",8
+230,Text,Open in new window,,,"(L0, T0, R0, B0)",9
+231,RadioButton,Display inline,,,"(L0, T0, R0, B0)",8
+232,Text,Display inline,,,"(L0, T0, R0, B0)",9
+233,RadioButton,Display in reading pane,,,"(L0, T0, R0, B0)",8
+234,Text,Display in reading pane,,,"(L0, T0, R0, B0)",9
+235,CheckBox,Search bar,,,"(L0, T0, R0, B0)",8
+236,Image,,tick,,"(L0, T0, R0, B0)",9
+237,Text,Search bar,,,"(L0, T0, R0, B0)",9
+238,CheckBox,Gridlines,,,"(L0, T0, R0, B0)",8
+239,Image,,tick,,"(L0, T0, R0, B0)",9
+240,Text,Gridlines,,,"(L0, T0, R0, B0)",9
+241,CheckBox,Header Row,,,"(L0, T0, R0, B0)",8
+242,Text,Header Row,,,"(L0, T0, R0, B0)",9
+243,CheckBox,RIC previews ,,,"(L0, T0, R0, B0)",8
+244,Text,RIC previews ,,,"(L0, T0, R0, B0)",9
+245,Image,,info,,"(L0, T0, R0, B0)",9
+246,CheckBox,Important news,,,"(L0, T0, R0, B0)",8
+247,Text,Important news,,,"(L0, T0, R0, B0)",9
+248,CheckBox,Time,,,"(L0, T0, R0, B0)",8
+249,Image,,tick,,"(L0, T0, R0, B0)",9
+250,Text,Time,,,"(L0, T0, R0, B0)",9
+251,CheckBox,Source,,,"(L0, T0, R0, B0)",8
+252,Text,Source,,,"(L0, T0, R0, B0)",9
+253,CheckBox,RICs,,,"(L0, T0, R0, B0)",8
+254,Text,RICs,,,"(L0, T0, R0, B0)",9
+255,CheckBox,Sentiment,,,"(L0, T0, R0, B0)",8
+256,Text,Sentiment,,,"(L0, T0, R0, B0)",9
+257,Button,ROW LINES,header-label,,"(L0, T0, R0, B0)",7
+258,Group,ROW LINES,content,,"(L0, T0, R0, B0)",7
+259,RadioButton,Auto,,,"(L0, T0, R0, B0)",8
+260,Text,Auto,,,"(L0, T0, R0, B0)",9
+261,RadioButton,1 line,,,"(L0, T0, R0, B0)",8
+262,Text,1 line,,,"(L0, T0, R0, B0)",9
+263,RadioButton,2 lines,,,"(L0, T0, R0, B0)",8
+264,Text,2 lines,,,"(L0, T0, R0, B0)",9
+265,RadioButton,3 lines,,,"(L0, T0, R0, B0)",8
+266,Text,3 lines,,,"(L0, T0, R0, B0)",9
+267,RadioButton,Auto,,,"(L0, T0, R0, B0)",8
+268,Text,Auto,,,"(L0, T0, R0, B0)",9
+269,RadioButton,1 line,,,"(L0, T0, R0, B0)",8
+270,Text,1 line,,,"(L0, T0, R0, B0)",9
+271,RadioButton,2 lines,,,"(L0, T0, R0, B0)",8
+272,Text,2 lines,,,"(L0, T0, R0, B0)",9
+273,RadioButton,3 lines,,,"(L0, T0, R0, B0)",8
+274,Text,3 lines,,,"(L0, T0, R0, B0)",9
+275,Button,TEXT,header-label,,"(L0, T0, R0, B0)",7
+276,Group,TEXT,content,,"(L0, T0, R0, B0)",7
+277,RadioButton,Compact,,,"(L0, T0, R0, B0)",8
+278,Text,Compact,,,"(L0, T0, R0, B0)",9
+279,RadioButton,Standard,,,"(L0, T0, R0, B0)",8
+280,Text,Standard,,,"(L0, T0, R0, B0)",9
+281,RadioButton,Spacious,,,"(L0, T0, R0, B0)",8
+282,Text,Spacious,,,"(L0, T0, R0, B0)",9
+283,RadioButton,Regular,,,"(L0, T0, R0, B0)",8
+284,Text,Regular,,,"(L0, T0, R0, B0)",9
+285,RadioButton,Bold,,,"(L0, T0, R0, B0)",8
+286,Text,Bold,,,"(L0, T0, R0, B0)",9
+287,Text,A,,,"(L0, T0, R0, B0)",8
+288,Group,6,,,"(L0, T0, R0, B0)",8
+289,Slider,,,,"(L0, T0, R0, B0)",9
+290,Text,A,,,"(L0, T0, R0, B0)",8
+291,Text,A,,,"(L0, T0, R0, B0)",8
+292,Group,3,,,"(L0, T0, R0, B0)",8
+293,Slider,,,,"(L0, T0, R0, B0)",9
+294,Text,A,,,"(L0, T0, R0, B0)",8
+295,Button,RESTORE,,,"(L0, T0, R0, B0)",8
+296,Text,COLORS,,,"(L0, T0, R0, B0)",7
+297,Image,,info,,"(L0, T0, R0, B0)",7
+298,Button,,header-label,,"(L0, T0, R0, B0)",7
+299,Pane,,content,,"(L0, T0, R0, B0)",7
+300,List,,,,"(L0, T0, R0, B0)",8
+301,ListItem,,,,"(L0, T0, R0, B0)",9
+302,Text,Headline text,,,"(L0, T0, R0, B0)",10
+303,Button,A,,,"(L0, T0, R0, B0)",10
+304,Button,,,,"(L0, T0, R0, B0)",10
+305,ListItem,,,,"(L0, T0, R0, B0)",9
+306,Text,Top headline and text,,,"(L0, T0, R0, B0)",10
+307,Button,A,,,"(L0, T0, R0, B0)",10
+308,Button,,,,"(L0, T0, R0, B0)",10
+309,ListItem,,,,"(L0, T0, R0, B0)",9
+310,Text,Alert headline and text,,,"(L0, T0, R0, B0)",10
+311,Button,A,,,"(L0, T0, R0, B0)",10
+312,Button,,,,"(L0, T0, R0, B0)",10
+313,List,,,,"(L0, T0, R0, B0)",8
+314,ListItem,,,,"(L0, T0, R0, B0)",9
+315,Text,Headline Highlight#1 Background only,,,"(L0, T0, R0, B0)",10
+316,Button,,,,"(L0, T0, R0, B0)",10
+317,ListItem,,,,"(L0, T0, R0, B0)",9
+318,Text,Headline Highlight#2 Background only,,,"(L0, T0, R0, B0)",10
+319,Button,,,,"(L0, T0, R0, B0)",10
+320,ListItem,,,,"(L0, T0, R0, B0)",9
+321,Text,Headline Highlight#3 Background only,,,"(L0, T0, R0, B0)",10
+322,Button,,,,"(L0, T0, R0, B0)",10
+323,ListItem,,,,"(L0, T0, R0, B0)",9
+324,Text,Headline Highlight#4 Background only,,,"(L0, T0, R0, B0)",10
+325,Button,,,,"(L0, T0, R0, B0)",10
+326,ListItem,,,,"(L0, T0, R0, B0)",9
+327,Text,Headline Highlight#5 Background only,,,"(L0, T0, R0, B0)",10
+328,Button,,,,"(L0, T0, R0, B0)",10
+329,Button,RESTORE,,,"(L0, T0, R0, B0)",8
+330,Button,SEARCH,header-label,,"(L0, T0, R0, B0)",7
+331,Pane,,,Intermediate D3D Window,"(L1591, T65, R2545, B825)",2
+332,Pane,,,,"(L1591, T65, R2545, B825)",2
+333,Pane,,,,"(L1591, T65, R2545, B825)",3
+334,Pane,,,,"(L1591, T65, R2545, B825)",4
+335,Pane,,,,"(L1591, T65, R2545, B825)",5
+336,Pane,,,,"(L1591, T65, R2545, B825)",6

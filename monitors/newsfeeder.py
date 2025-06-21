@@ -104,7 +104,7 @@ def monitor_control(control, main_window):
         if new_lines:
             beep()
             try:
-                with open("control_dump.csv", "a", newline="", encoding="utf-8") as f:
+                with open("control_dump_v2.csv", "a", newline="", encoding="utf-8") as f:
                     writer = csv.writer(f)
                     writer.writerow([datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
                     for line in current_text.splitlines():
@@ -116,8 +116,6 @@ def monitor_control(control, main_window):
             if headline:
                 log_message(f"Extracted headline: {headline}")
                 log_headline_csv(headline)
-                # Uncomment to post headline to Discord:
-                # post_to_discord(headline)
             else:
                 log_message("No valid headline extracted.")
         else:

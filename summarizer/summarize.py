@@ -35,7 +35,7 @@ def send_to_discord(title: str, summary: str) -> None:
         print(f"Failed to send to Discord: {response.status_code} {response.text}")
 
 
-def list_recent_files(directory, count=20):
+def list_recent_files(directory, count=50):
     all_files = []
     for root, _, files in os.walk(directory):
         for fname in files:

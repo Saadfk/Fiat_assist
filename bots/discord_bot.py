@@ -147,7 +147,8 @@ async def positions_cmd(
                 f"P&L (Today): {closed_pnl}"
             )
             return
-
+            positions_df = get_open_positions_weight()
+            mt5_positions = mt5.positions_get() or []  # normalize to empty list
         # Build and merge DataFrames
         df_mt5 = (
             pd.DataFrame([p._asdict() for p in mt5_positions])  # type: ignore

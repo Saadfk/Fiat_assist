@@ -16,7 +16,7 @@ from pywinauto.controls.uiawrapper import UIAWrapper
 # ─── Config ────────────────────────────────────────────────────────────────
 WIN_SUBSTR = sys.argv[1] if len(sys.argv) > 1 else "FIATFEED"
 DOC_NAME   = "NEWS2.0"            # name shown in UIA for the feed Document
-CSV_PATH   = Path("headlines.csv")
+CSV_PATH   = Path("headlines1.csv")
 TIME_RE    = re.compile(r"^\d{2}:\d{2}:\d{2}$")   # HH:MM:SS
 CACHE_SIZE = 800
 # ───────────────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ def emit(ts: str, headline: str):
     csv_writer.writerow([full_ts, headline, "RTRS"]); csv_fp.flush()
 
     try:
-        winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
+        winsound.Beep(1500, 400)
     except RuntimeError:
         winsound.Beep(1500, 400)
 

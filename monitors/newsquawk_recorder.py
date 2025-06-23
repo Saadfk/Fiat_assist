@@ -51,7 +51,7 @@ MIN_WORDS = 5  # require at least 5 words before posting
 # --- new: skip any WAV file smaller than ~32 KB (tune as needed) ---
 MIN_FILE_SIZE_BYTES = 32_000
 
-CSV_PATH = os.path.join(os.path.dirname(__file__), "headlines.csv")
+CSV_PATH = os.path.join(os.path.dirname(__file__), "headlines1.csv")
 
 def get_ws_url():
     logger.debug("Fetching Chrome tabs on port %d…", DEBUG_PORT)

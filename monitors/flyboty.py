@@ -3,7 +3,7 @@
 
 """
 Monitor headlines from "Breaking News - The Fly" and log new items
-to headlines.csv with timestamp format YYYY-MM-DD HH:MM:SS,HeadlineText,Source
+to headlines1.csv with timestamp format YYYY-MM-DD HH:MM:SS,HeadlineText,Source
 """
 
 import os
@@ -79,7 +79,7 @@ def load_existing(csv_filename):
     return existing
 
 def main():
-    csv_file = os.path.join(os.path.dirname(__file__), "headlines.csv")
+    csv_file = os.path.join(os.path.dirname(__file__), "headlines1.csv")
 
     browser = pychrome.Browser(url="http://127.0.0.1:9222")
     try:
